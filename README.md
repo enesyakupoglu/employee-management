@@ -55,3 +55,43 @@ employee-management/
 ├── .eslintrc                    # ESLint kuralları
 ├── package.json                 # Bağımlılıklar ve scriptler
 ├── README.md                    # Proje dokümantasyonu (Bu dosya)
+
+🚀 Kurulum & Çalıştırma
+1️⃣ Projeyi Klonla
+git clone https://github.com/kullanici-adi/employee-management.git
+cd employee-management
+2️⃣ Bağımlılıkları Yükle
+npm install
+3️⃣ Uygulamayı Başlat
+npm run dev
+
+📌 Uygulama şurada çalışacak: http://localhost:8000
+
+🧪 Test Çalıştırma & Coverage
+Testleri çalıştırmak için:
+npx web-test-runner --coverage
+✅ Test kapsamı raporunu şu klasörde bulabilirsin: coverage/lcov-report/index.html
+
+🎨 Bileşenler & Açıklamalar
+🟢 EmployeeList.js
+Çalışanları listeleme, sayfalama, arama, düzenleme ve silme işlemlerini yönetir.
+
+🟢 EmployeeForm.js
+Yeni çalışan ekleme ve mevcut çalışanı düzenleme formudur.
+
+🟢 DeleteModal.js
+Çalışan silme işlemini onaylayan modal penceredir.
+
+🟢 Localization.js
+Uygulamanın Türkçe ve İngilizce dil desteğini yönetir.
+
+🛠 Kullanılan Teknolojiler
+LitElement (JavaScript) - Hafif ve performanslı bileşen mimarisi
+Vaadin Router - Tek sayfa uygulama yönlendirme
+Open Web Components (OWC) - Web bileşeni testleri
+Web Test Runner - %85+ test kapsamı için test framework'ü
+
+📌 Geliştirici Notları
+Kod yazarken ESLint ve Prettier kurallarına uyulmalıdır.
+Bileşenler modüler ve yeniden kullanılabilir şekilde tasarlanmıştır.
+Yeni bir sayfa eklemek için /pages/ klasörüne bir bileşen ekleyip router.js içinde yönlendirme yapabilirsin.
