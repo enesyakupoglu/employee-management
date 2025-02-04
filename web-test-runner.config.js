@@ -86,16 +86,25 @@ try {
 
 // https://modern-web.dev/docs/test-runner/cli-and-configuration/
 export default {
+  nodeResolve: true,
+  coverage: true,
+  coverageConfig: {
+    include: [
+      'src/components/**/*.js',
+      'src/pages/**/*.js',
+      'src/utils/**/*.js',
+      'src/data/**/*.js',
+    ],
+  },
   rootDir: '.',
-  files: ['./test/**/*_test.js'],
-  nodeResolve: {exportConditions: mode === 'dev' ? ['development'] : []},
+  files: ['./tests/**/*_test.js'],
   preserveSymlinks: true,
   browsers: commandLineBrowsers ?? Object.values(browsers),
   testFramework: {
     // https://mochajs.org/api/mocha
     config: {
-      ui: 'tdd',
-      timeout: '60000',
+      ui: 'bdd',
+      timeout: '240000',
     },
   },
   plugins: [
@@ -104,8 +113,8 @@ export default {
     legacyPlugin({
       polyfills: {
         webcomponents: true,
-        // Inject lit's polyfill-support module into test files, which is required
-        // for interfacing with the webcomponents polyfills
+        fetch: true,
+        intersectionObserver: true,
         custom: [
           {
             name: 'lit-polyfill-support',
@@ -117,4 +126,6 @@ export default {
       },
     }),
   ],
+  browserStartTimeout: 240000,
+  testsFinishTimeout: 480000,
 };

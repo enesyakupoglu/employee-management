@@ -1,11 +1,28 @@
-<!doctype html>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Lit Starter Kit</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management</title>
+    <script type="module" src="./src/index.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background: #f4f4f4;
+        color: #333;
+      }
+      #outlet {
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
-    <a href="/dev/index.html">Component Demo</a>
+    <navigation-menu></navigation-menu>
+    <div id="outlet"></div>
   </body>
 </html>
